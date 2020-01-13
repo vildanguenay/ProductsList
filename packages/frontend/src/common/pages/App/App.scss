@@ -1,0 +1,11 @@
+@import 'assets/theme';
+// provided by hydra
+@import 'assets/styles/utilities/normalize';
+@import 'assets/styles/fontFace';
+
+:global {
+}
+
+.main {
+  min-height: calc(100vh - 580px);
+}

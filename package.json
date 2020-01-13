@@ -1,0 +1,53 @@
+{
+  "dependencies": {
+    "@xxxlgroup/mrm-preset": "^8.1.2-beta.125",
+    "mrm": "^2.0.2"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true,
+  "devDependencies": {
+    "@hot-loader/react-dom": "^16.8.6",
+    "@xxxlgroup/eslint-config-hydra": "8.1.2-beta.102",
+    "@xxxlgroup/hydra-cli": "8.1.2-beta.105",
+    "@xxxlgroup/hydra-ready-webpack": "8.1.2-beta.109",
+    "babel7-jest": "1.0.1",
+    "cross-env": "5.2.0",
+    "enzyme": "3.8.0",
+    "enzyme-adapter-react-16": "1.7.1",
+    "enzyme-to-json": "3.3.5",
+    "eslint": "6.1.0",
+    "eslint-plugin-compat": "2.6.3",
+    "eslint-plugin-import": "2.18.0",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.14.2",
+    "husky": "1.3.1",
+    "identity-obj-proxy": "3.0.0",
+    "jest-junit": "6.0.0",
+    "lint-staged": "8.1.5",
+    "prettier-stylelint": "0.4.2",
+    "react-styleguidist": "8.0.6",
+    "run-s": "0.0.0",
+    "sonar-scanner": "3.1.0",
+    "stylelint-config-css-modules": "^2.2.0",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-prettier": "^8.0.0",
+    "stylelint-config-standard": "^19.0.0"
+  },
+  "scripts": {
+    "lint": "run-s lint:js lint:css",
+    "lint:js": "eslint . --fix --ext .json --ext .js",
+    "lint:css": "prettier-stylelint --write -q",
+    "dev": "./node_modules/.bin/cli dev",
+    "prod": "./node_modules/.bin/cli prod",
+    "wba": "./node_modules/.bin/cli wba",
+    "styleguide": "./node_modules/.bin/cli styleguide"
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "git update-index --again",
+      "pre-commit": "lint-staged"
+    }
+  }
+}

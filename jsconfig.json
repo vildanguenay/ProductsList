@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "*",
+        "packages/frontend/src/les/*",
+        "packages/frontend/src/lz/*",
+        "packages/frontend/src/mmx/*",
+        "packages/frontend/src/mbx/*",
+        "packages/frontend/src/common/*",
+        "node_modules/*"
+      ]
+    },
+    "experimentalDecorators": true
+  }
+}

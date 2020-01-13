@@ -1,0 +1,8 @@
+@import 'assets/theme';
+
+$header-background-color: color(default, $color-tertiary);
+$header-background-color: color(default, $color-primary);
+$header-hint-background: color(light, $color-tertiary);
+$header-hint-color: color(default, $color-secondary);
+
+@import 'common/components/Header/Header.scss';

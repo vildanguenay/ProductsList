@@ -1,0 +1,52 @@
+@import 'assets/theme';
+
+$header-background-color: color(default, $color-primary) !default;
+$header-hint-background: color(light, $color-tertiary) !default;
+$header-hint-color: color(default, $color-secondary) !default;
+
+.container {
+  margin-bottom: space();
+}
+.hydraHint {
+  padding: space(xsmall);
+  text-align: center;
+  background-color: $header-hint-background;
+  color: $header-hint-color;
+}
+.wrapper {
+  background-color: $header-background-color;
+  padding: space();
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  color: color(100, $color-tertiary);
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.actionBar {
+  display: flex;
+  align-items: flex-end;
+}
+
+.navItem {
+  color: color(100, $color-tertiary);
+  padding: space();
+  &:hover {
+    color: color(100, $color-tertiary);
+  }
+}
+
+.logo {
+  height: space(large);
+  width: auto;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "frontend",
+  "license": "MIT",
+  "version": "0.1.0",
+  "scripts": {
+    "create:component": "create-boilerplate -p . -f src/common/components -r components -b ../../node_modules/create-boilerplate/boilerplates/react-component"
+  },
+  "dependencies": {
+    "@xxxlgroup/hydra-icons": "~9.1.1",
+    "@xxxlgroup/hydra-ui-components": "~9.1.1",
+    "qs": "^6.5.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-router-dom": "^5.0.1",
+    "wicg-inert": "^2.0.0"
+  },
+  "devDependencies": {
+    "prop-types": "15.6.2",
+    "@babel/plugin-transform-runtime": "7.2.0",
+    "react-hot-loader": "^4.6.3",
+    "copy-webpack-plugin": "4.6.0",
+    "create-boilerplate": "0.2.2"
+  }
+}

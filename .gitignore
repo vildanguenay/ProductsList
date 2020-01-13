@@ -1,0 +1,16 @@
+.idea
+*.iml
+.DS_Store
+node_modules
+*.log
+dist
+.scannerwork/
+reports/
+/packages/gui-tests/screenshots/
+/packages/gui-tests/videos/
+/report.html
+/stats.json
+.vscode/
+junit.xml
+.eslintcache
+package-lock.json
