@@ -15,7 +15,7 @@ class ProductsList extends React.Component {
         result => {
           this.setState({
             isLoaded: true,
-            items: result.items,
+            items: result,
           });
         },
         error => {
@@ -38,7 +38,7 @@ class ProductsList extends React.Component {
     return (
       <ul>
         {items.map(item => (
-          <li>
+          <li key={item.id}>
             {item.name} {item.price}
           </li>
         ))}
