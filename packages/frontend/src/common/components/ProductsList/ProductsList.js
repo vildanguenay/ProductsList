@@ -1,13 +1,8 @@
 import React from 'react';
-import { lazyload } from 'react-lazyload';
+import LazyLoad from 'react-lazyload';
 // Style
 import styles from 'components/ProductsList/ProductsList.scss';
 
-@lazyload({
-  height: 200,
-  once: true,
-  offset: 100,
-})
 class ProductsList extends React.Component {
   state = {
     isLoaded: false,
@@ -48,7 +43,10 @@ class ProductsList extends React.Component {
         {items.map(item => (
           <div className={styles.box} key={item.id}>
             <div>{`${item.name}`}</div>
-            <img src={item.image} alt="" />
+            <LazyLoad height={320} offset={-500}>
+              <img src={item.image} alt="" />
+            </LazyLoad>
+
             <div className={styles.priceCon}>
               {`old price: ${item.price} EUR on sale for: ${item.priceSale} EUR`}
             </div>
