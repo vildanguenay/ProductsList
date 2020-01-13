@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from 'components/ProductsList/ProductsList.scss';
+
 class ProductsList extends React.Component {
   state = {
     isLoaded: false,
@@ -36,13 +38,17 @@ class ProductsList extends React.Component {
       return <div>Loading...</div>;
     }
     return (
-      <ul>
+      <div className={styles.containerList}>
         {items.map(item => (
-          <li key={item.id}>
-            {item.name} {item.price}
-          </li>
+          <div className={styles.box} key={item.id}>
+            <div>{`${item.name}`}</div>
+            <img src={item.image} alt="" />
+            <div className={styles.priceCon}>
+              {`old price: ${item.price} EUR on sale for: ${item.priceSale} EUR`}
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     );
   }
 }
