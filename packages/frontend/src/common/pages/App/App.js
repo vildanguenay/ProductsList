@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Heading, Icon, Content } from '@xxxlgroup/hydra-ui-components';
+
 // Styles
 import styles from 'pages/App/App.scss';
 import Header from 'components/Header';
