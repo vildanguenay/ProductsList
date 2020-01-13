@@ -1,7 +1,13 @@
 import React from 'react';
-
+import { lazyload } from 'react-lazyload';
+// Style
 import styles from 'components/ProductsList/ProductsList.scss';
 
+@lazyload({
+  height: 200,
+  once: true,
+  offset: 100,
+})
 class ProductsList extends React.Component {
   state = {
     isLoaded: false,
