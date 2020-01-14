@@ -1,5 +1,8 @@
 import React from 'react';
 import LazyLoad from 'react-lazyload';
+// Hydra
+import { Input, Icon } from '@xxxlgroup/hydra-ui-components';
+import { search } from '@xxxlgroup/hydra-icons';
 // Style
 import styles from 'components/ProductsList/ProductsList.scss';
 
@@ -39,20 +42,24 @@ class ProductsList extends React.Component {
       return <div>Loading...</div>;
     }
     return (
-      <div className={styles.containerList}>
-        {items.map(item => (
-          <div className={styles.box} key={item.id}>
-            <div>{`${item.name}`}</div>
-            <LazyLoad height={320} offset={-300}>
-              <img src={item.image} alt="" />
-            </LazyLoad>
+      <>
+        <Input label="Search" suffix={<Icon glyph={search} />} />
 
-            <div className={styles.priceCon}>
-              {`old price: ${item.price} EUR on sale for: ${item.priceSale} EUR`}
+        <div className={styles.containerList}>
+          {items.map(item => (
+            <div className={styles.box} key={item.id}>
+              <div>{`${item.name}`}</div>
+              <LazyLoad height={320} offset={-300}>
+                <img src={item.image} alt="" />
+              </LazyLoad>
+
+              <div className={styles.priceCon}>
+                {`old price: ${item.price} EUR on sale for: ${item.priceSale} EUR`}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </>
     );
   }
 }
