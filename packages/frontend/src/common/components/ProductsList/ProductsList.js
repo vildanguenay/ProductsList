@@ -49,7 +49,7 @@ class ProductsList extends React.Component {
           {items.map(item => (
             <div className={styles.box} key={item.id}>
               <div>{`${item.name}`}</div>
-              <LazyLoad height={320} offset={-300}>
+              <LazyLoad height={320} offset={-350}>
                 <img src={item.image} alt="" />
               </LazyLoad>
 
