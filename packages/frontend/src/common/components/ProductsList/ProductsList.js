@@ -11,6 +11,7 @@ class ProductsList extends React.Component {
     isLoaded: false,
     error: null,
     items: [],
+    searchResult: '',
   };
 
   componentDidMount() {
@@ -33,23 +34,37 @@ class ProductsList extends React.Component {
       );
   }
 
+  updateSearch = event => {
+    this.setState({ searchResult: event.target.value });
+  };
+
   render() {
-    const { error, isLoaded, items } = this.state;
+    const { error, isLoaded, items, searchResult } = this.state;
     if (error) {
       return <div>Error: {error.message} </div>;
     }
     if (!isLoaded) {
       return <div>Loading...</div>;
     }
+    const filteredData = items.filter(item =>
+      item.name.toLowerCase().includes(searchResult.toLowerCase()),
+    );
+
     return (
       <>
-        <Input label="Search" suffix={<Icon glyph={search} />} />
+        <Input
+          type="text"
+          value={this.state.searchResult}
+          onChange={this.updateSearch}
+          label="Search"
+          suffix={<Icon glyph={search} />}
+        />
 
         <div className={styles.containerList}>
-          {items.map(item => (
+          {filteredData.map(item => (
             <div className={styles.box} key={item.id}>
               <div>{`${item.name}`}</div>
-              <LazyLoad height={320} offset={-350}>
+              <LazyLoad height={320} offset={-418}>
                 <img src={item.image} alt="" />
               </LazyLoad>
 
